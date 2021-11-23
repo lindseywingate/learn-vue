@@ -1,10 +1,7 @@
 <template>
     <div class="card">
       <p>Thanksgiving Dinner</p>
-      <a v-on:click="log">Log Food</a>
-      <ul id="foodList">
-        <li v-for="item in food" :key="item.name">{{item.name}}</li>
-      </ul>
+        <p v-for="item in food" :key="item.name">{{item.course}}. {{item.name}}</p>
     </div>
 </template>
 
@@ -13,20 +10,19 @@
 export default {
   name: 'Card',
   methods: {
-    log() {
-    },
   },
   computed: {
     currentDate() {
       return Date.now();
-    }
+    },
   },
   data() {
     return {
       food: [
-        {name: 'turkey', course: 3},
         {name: 'apple salad', course: 1},
-        {name: 'rice pilaf', course: 2}
+        {name: 'rice pilaf', course: 2},
+        {name: 'turkey', course: 3},
+        {name: 'pie', course: 4},
       ],
     }
   },
