@@ -1,8 +1,8 @@
 <template>
     <div class="card">
       <p>Thanksgiving Dinner</p>
-        <p v-for="item in food" :key="item.name">{{item.course}}. {{item.name}}</p>
-        <p>{{ currentDate }}</p>
+      <p>{{ currentDate }}</p>
+      <p v-for="item in food" :key="item.name">{{item.course}}. {{item.name}}</p>
     </div>
 </template>
 
