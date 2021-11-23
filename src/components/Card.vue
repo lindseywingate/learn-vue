@@ -2,18 +2,19 @@
     <div class="card">
       <p>Thanksgiving Dinner</p>
         <p v-for="item in food" :key="item.name">{{item.course}}. {{item.name}}</p>
+        <p>{{ currentDate }}</p>
     </div>
 </template>
 
 <script>
-
+var moment = require('moment');
 export default {
   name: 'Card',
   methods: {
   },
   computed: {
     currentDate() {
-      return Date.now();
+      return moment().format("MMM Do YYYY");
     },
   },
   data() {
