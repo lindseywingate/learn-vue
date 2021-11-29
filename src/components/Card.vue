@@ -1,31 +1,24 @@
 <template>
-    <div class="card">
-      <p>Thanksgiving Dinner</p>
-      <p>{{ currentDate }}</p>
-      <p v-for="item in food" :key="item.name">{{item.course}}. {{item.name}}</p>
+<div class="card">
+    <div class="personDetails">
+      <p><b>{{ customer.customerName }}</b></p>
+      <p>{{ customer.customerStreet }}</p>
+      <p>{{ customer.customerCity }}, {{ customer.customerStateProvince }}, {{ customer.customerZip }}</p>
     </div>
+    <div class="itemDetails">
+      <p>test</p>
+    </div>
+    <div class="shippingDetails">
+      <p>shipping details</p>
+      </div>
+  </div>
 </template>
 
 <script>
-var moment = require('moment');
 export default {
   name: 'Card',
-  methods: {
-  },
-  computed: {
-    currentDate() {
-      return moment().format("MMM Do YYYY");
-    },
-  },
-  data() {
-    return {
-      food: [
-        {name: 'apple salad', course: 1},
-        {name: 'rice pilaf', course: 2},
-        {name: 'turkey', course: 3},
-        {name: 'pie', course: 4},
-      ],
-    }
+  props: {
+    customer: Object,
   },
 };
 </script>
@@ -34,5 +27,20 @@ export default {
 .card {
     background: #D6EAF8; 
     border: 1px solid #5DADE2;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 10px;
+}
+.personDetails {
+  text-align: left;
+  display: table-cell;
+}
+.itemDetails {
+  display: table-cell;
+  background-color: "red";
+}
+.shippingDetails {
+  display: table-cell;
 }
 </style>
